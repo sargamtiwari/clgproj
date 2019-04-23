@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Diabetes Prediction</title>
+</head>
+<body>
+<form action="/upload" method="post">
+    <div class="container">
+        <h2>Diabetes Prediction</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Tests</th>
+        <th>Values</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pregnency</td>
+        <td><input type="text" name="preg"></td>
+      </tr>
+      <tr>
+        <td>Glucose</td>
+        <td><input type="text" name="glu"></td>
+      </tr>
+      <tr>
+        <td>Blood Pressure</td>
+        <td><input type="text" name="bp"></td>
+      </tr>
+      <tr>
+        <td>Triceps</td>
+        <td><input type="text" name="tri"></td>
+      </tr>
+      <tr>
+        <td>Insulin</td>
+        <td><input type="text" name="insu"></td>
+      </tr>
+      <tr>
+        <td>BMI</td>
+        <td><input type="text" name="bmi"></td>
+      </tr>
+      <tr>
+        <td>Pedidegree</td>
+        <td><input type="text" name="pedi"></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input type="text" name="age"></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><input type="submit" value="Predict"></td>
+      </tr>
+      {% with messages = get_flashed_messages() %}
+         {% if messages %}
+            <tr>
+                <td><h2>Results</h2></td>
+               {% for message in messages %}
+                <td><h2>{{ message }}</h2></td>
+               {% endfor %}
+            </tr>
+         {% endif %}
+      {% endwith %}
+    </tbody>
+  </table>
+</div>
+</form>
+</body>
+</html>
